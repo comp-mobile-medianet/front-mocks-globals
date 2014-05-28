@@ -1,0 +1,326 @@
+FORMAT: 1A
+HOST: http://www.google.com
+
+# Global
+Global APIs for Mobile Web
+
+# Group Empty
+
+## Empty [/pages/empty.json]
+### Default [GET]
++ Response 200 (application/json)
+
+        {
+        }
+        
+## Empty with menu [/pages/empty/menu.json]
+### Default [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true,
+                "backButton": {
+                    "url": "index.html"
+                }
+            },
+            "iwantto": [
+                {
+                    "text": "Hacer transferencia",
+                    "type": "OPERATION",
+                    "url": "transfers.html",
+                    "eventId": null,
+                    "jsId": null,
+                    "params": null
+                },
+                {
+                    "text": "Filtrar movimientos",
+                    "type": "SEARCH",
+                    "url": null,
+                    "eventId": null,
+                    "jsId": "js-filter-movements",
+                    "params": null
+                }
+            ]
+        }
+
+## Empty with menu without link [/pages/empty/menu-no-back.json]
+### Default [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true,
+                "hideBackButton": true
+            }
+        }
+
+# Group Language
+
+## Load page [/pages/language.json]
+### Default [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": false,
+                "hideBackButton": true
+            },
+            "pageContent": [
+                {
+                    "code": "en",
+                    "name": "english",
+                    "messageKey": "public.language.english",
+                    "selected": true
+                },
+                {
+                    "code": "es",
+                    "name": "spanish",
+                    "messageKey": "public.language.spanish",
+                    "selected": false
+                }
+            ]
+        }
+        
+## Service center page [/pages/language.json?mockId=1]
+### Default [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true,
+                "backButton": {
+                    "url": "index.html"
+                }
+            }
+        }
+
+
+# Group Find us
+
+## ATM & Branches [/api/findus/pois.json]
+### Default [GET]
+
++ Request
+
+        {
+            "latitude": 33.52472222222222,
+            "longitude": 86.81277777777778,
+            "radius": null,
+            "limit": null,
+            "startAt": null
+        }
+
++ Response 200 (application/json)
+
+        {
+            "alerts": null,
+            "pageContent":[
+                {
+                    "type": "atm",
+                    "idPoi": "atm_us_23_atm_us_bbva_atm",
+                    "description": "BBVA ATM",
+                    "latitude": 40.492765,
+                    "longitude": -3.687185799999952,
+                    "idBank": "9999",
+                    "address1": "801 17th St N",
+                    "address2": "Birmingham, AL 35203",
+                    "distance": 605.950699987913,
+                    "lobbyHours":{
+                        "hours_mt":"24 hour - Yes"
+                    }
+                    
+                },
+                {
+                    "type": "branch",
+                    "idPoi": "branch_us_12_branch_us_bbva_branch",
+                    "description": "BBVA Branch",
+                    "latitude": 40.480757,
+                    "longitude": -3.68611,
+                    "idBank": "9999",
+                    "address1": "505 N 20th St, Suite 100",
+                    "address2": "Birmingham, AL 35203",
+                    "telephone": "(205) 297-3206",
+                    "distance": 843.044010287908,
+                    "lobbyHours":{
+                        "hours_mt":"24 hour - Yes",
+                        "hours_fri":"24 hour - Yes",
+                        "hours_sat":"24 hour - No"
+                    },
+                    "driveHours":{
+                        "hours_mt":"12 hour - Yes",
+                        "hours_fri":"12 hour - Yes",
+                        "hours_sat":null
+                    }
+                    
+                    
+                },
+                {
+                    "type": "branch",
+                    "idPoi": "branch_us_22_branch_us_bbva_branch",
+                    "description": "BBVA Branch",
+                    "latitude": 40.487905,
+                    "longitude": -3.694202,
+                    "idBank": "9999",
+                    "address1": "15 S 20th St",
+                    "address2": "Birmingham, AL 35233",
+                    "telephone": "(205) 297-1986",
+                    "distance": 843.044010287908,
+                     "lobbyHours":{
+                        "hours_mt":"24 hour - Yes",
+                        "hours_fri":"24 hour - Yes",
+                        "hours_sat":"24 hour - No"
+                    },
+                    "driveHours":{
+                        "hours_mt":"12 hour - Yes",
+                        "hours_fri":"12 hour - Yes",
+                        "hours_sat":null
+                    }
+                }
+            ]
+            
+        }
+
+
+## Search address [/api/findus/address.json]
+### Default [GET]
+
++ Request
+
+        {
+            "address": "Cardenal Herrera Oria"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "alerts": null,
+            "pageContent": [
+                {
+                    "latitude": 40.48214,
+                    "longitude": -3.718589,
+                    "address1": "Avenida Cardenal Herrera Oria",
+                    "address2": "Madrid, España "
+                },
+                {
+                    "latitude": 36.840657,
+                    "longitude": -2.455252,
+                    "address1": "Calle Cardenal Herrera Oria",
+                    "address2": "Almeria, España"
+                },
+                {
+                    "latitude": 43.455987,
+                    "longitude": -3.851849,
+                    "address1": "Avenida Cardenal Herrera Oria",
+                    "address2": "Santander, España"
+                },
+                {
+                    "latitude": 43.458694,
+                    "longitude": -3.841492,
+                    "address1": "Calle Cardenal Herrera Oria",
+                    "address2": "Santander, España"
+                },
+                {
+                    "latitude": 36.428944,
+                    "longitude": -5.14776,
+                    "address1": "Calle Cardenal Herrera Oria",
+                    "address2": "29680 Estepona, Málaga, España"
+                }
+            ]
+        }
+
+
+## Search address with empty result [/api/findus/address.json?mockId=2]
+### Default [GET]
+
++ Request
+
+        {
+            "address": "Euclideaaa"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "alerts": [
+                {
+                    "type": "INFO",
+                    "alert": [
+                        {
+                            "text": "No nearby points of interests found of the type.",
+                            "field": ""
+                        }
+                    ]
+                }
+            ],
+            "pageContent": []
+        }
+
+
+# Group Warnings
+
+
+## Warnings [/pages/warnings.json]
+### Default [GET]
++ Response 200 (application/json)
+
+        { 
+            "text": "Mobile and Online Banking will be unavailable Sat 11/23 from 12AM to 3AM CT",
+            "url":"",
+            "active":"N"
+        }
+
+
+
+# Group Error
+
+Global error view
+
+## Error with custom messages [/pages/error.json]
+### Custom error [GET]
++ Response 200 (application/json)
+
+        {
+            "error": {
+                "errorMsg": "Some error happened while performing operation"
+            }
+        }
+
+## Error without custom messages [/pages/error.json?mockId=2]
+### Custom error [GET]
++ Response 200 (application/json)
+
+        {
+            
+        }
+        
+
+# Group I Want To
+
+I Want To Button example
+
+## I Want To [/components/iwantto.json]
+### Custom error [GET]
++ Response 200 (application/json)
+
+        {
+            "iwantto": [
+                {
+                    "text": "Hacer transferencia",
+                    "type": "OPERATION",
+                    "url": "transfers.html",
+                    "eventId": null,
+                    "jsId": null,
+                    "params": null
+                },
+                {
+                    "text": "Filtrar movimientos",
+                    "type": "SEARCH",
+                    "url": null,
+                    "eventId": null,
+                    "jsId": "js-filter-movements",
+                    "params": null
+                }
+            ]
+        }
+
