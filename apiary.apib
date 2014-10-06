@@ -128,7 +128,6 @@ Global APIs for Mobile Web
             }
         }
 
-
 ## Remembered user [/pages/index.json?mockId=2]
 ### Default [GET]
 + Response 200 (application/json)
@@ -138,6 +137,39 @@ Global APIs for Mobile Web
                 "showMenu": true,
                 "hideBackButton": true
             },
+            "pageContent": {
+                "feedback": "https://secure.opinionlab.com/ccc01/o.asp?id=CHAfLukV",
+                "remembered": true,
+                "nickname": "Marcos Manuel",
+                "lastSignonDate": "Wednesday 03/12/2014"
+            }                
+        }
+
+## Message with link [/pages/index.json?mockId=3]
+### Default [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true,
+                "hideBackButton": true
+            },
+            "alerts": [
+                {
+                    "type": "INFO",
+                    "alert": [
+                        {
+                            "text": "No nearby points of interests found of the type.",
+                            "field": "",
+                            "link": {
+                                "external": true,
+                                "text": "Visit google",
+                                "url": "https://www.google.com"
+                            }
+                        }
+                    ]
+                }
+            ],
             "pageContent": {
                 "feedback": "https://secure.opinionlab.com/ccc01/o.asp?id=CHAfLukV",
                 "remembered": true,
