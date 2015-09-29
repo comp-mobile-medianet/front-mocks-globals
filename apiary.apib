@@ -161,6 +161,42 @@ Global APIs for Mobile Web
             }
         }
 
+## English index systemOutage [/pages/index.json?mockId=systemOutage]
+### Default [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true,
+                "hideBackButton": true
+            },
+            "alerts": [
+                {
+                    "type": "WARN",
+                    "alert": [
+                        {
+                            "text": "System unavailable. Please try again later."
+                        }
+                    ]
+                }
+            ],
+            "crm": {
+               "imageUrls": {
+                    "def": "css/img/imageName.png",
+                    "at2x": "css/img/imageName.@2x.png",
+                    "hdpi": "css/img/imageName.hdpi.png",
+                    "xhdpi": "css/img/imageName.xhdpi.png",
+                    "xxhdpi": "css/img/imageName.xxhdpi.png"
+                },
+               "closeable": false,
+               "location": "HOME"
+            },
+            "pageContent": {
+                "systemOutage": true,
+                "feedback": "https://secure.opinionlab.com/ccc01/o.asp?id=CHAfLukV"
+            }
+        }
+        
 ## Remembered user [/pages/index.json?mockId=2]
 ### Default [GET]
 + Response 200 (application/json)
@@ -176,6 +212,35 @@ Global APIs for Mobile Web
                 "nickname": "Marcos Manuel",
                 "username": "marcosmon",
                 "lastSignonDate": "on 03/12/2014 at 14:23"
+            }                
+        }
+
+## Remembered user systemOutage [/pages/index.json?mockId=rememberSystemOutage]
+### Default [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true,
+                "hideBackButton": true
+            },
+            "alerts": [
+                {
+                    "type": "WARN",
+                    "alert": [
+                        {
+                            "text": "System unavailable. Please try again later."
+                        }
+                    ]
+                }
+            ],
+            "pageContent": {
+                "feedback": "https://secure.opinionlab.com/ccc01/o.asp?id=CHAfLukV",
+                "remembered": true,
+                "nickname": "Marcos Manuel",
+                "username": "marcosmon",
+                "lastSignonDate": "on 03/12/2014 at 14:23",
+                "systemOutage": true
             }                
         }
 
