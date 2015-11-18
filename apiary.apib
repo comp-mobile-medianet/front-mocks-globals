@@ -157,6 +157,44 @@ Global APIs for Mobile Web
                "location": "HOME"
             },
             "pageContent": {
+                "isCreditCardActivate":false,
+                "feedback": "https://secure.opinionlab.com/ccc01/o.asp?id=CHAfLukV"
+            }
+        }
+        
+## English index [/pages/index.json?mockId=]
+### Default [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true,
+                "hideBackButton": true
+            },
+            "alerts": [
+                {
+                    "type": "INFO",
+                    "alert": [
+                        {
+                            "text": "Warning example",
+                            "field": ""
+                        }
+                    ]
+                }
+            ],
+            "crm": {
+               "imageUrls": {
+                    "def": "css/img/imageName.png",
+                    "at2x": "css/img/imageName.@2x.png",
+                    "hdpi": "css/img/imageName.hdpi.png",
+                    "xhdpi": "css/img/imageName.xhdpi.png",
+                    "xxhdpi": "css/img/imageName.xxhdpi.png"
+                },
+               "closeable": false,
+               "location": "HOME"
+            },
+            "pageContent": {
+                "isCreditCardActivate":true,
                 "feedback": "https://secure.opinionlab.com/ccc01/o.asp?id=CHAfLukV"
             }
         }
